@@ -1,6 +1,5 @@
 package com.lwenkun.imageloadinglibrary.ui.activities;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -18,8 +17,6 @@ import android.widget.Toast;
 import com.lwenkun.imageloadinglibrary.R;
 import com.lwenkun.imageloadinglibrary.adapter.ImageListAdapter;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -31,7 +28,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         RecyclerView rv_imageList = (RecyclerView) findViewById(R.id.image_list);
-        rv_imageList.setAdapter(new ImageListAdapter(new ArrayList<Bitmap>()));
+        rv_imageList.setAdapter(new ImageListAdapter(MainActivity.this, getResources()));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

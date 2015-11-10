@@ -1,6 +1,7 @@
 package com.lwenkun.imageloadinglibrary.adapter;
 
-import android.graphics.Bitmap;
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,19 +9,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.lwenkun.imageloadinglibrary.R;
-
-import java.util.ArrayList;
+import com.lwenkun.imageloadinglibrary.provider.Images;
+import com.lwenkun.imageloadinglibrary.utils.BitmapWorker;
 
 /**
  * Created by 15119 on 2015/11/9.
  */
 public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.ViewHolder> {
 
-    ArrayList<Bitmap> bitmaps;
+    private final Context context;
+
+    private final int DEFAULT_TYPE = 0;
+
+    private int bitmapSize = Images.imageUrls.length;
+
+    private BitmapWorker bitmapWorker;
 
     //自定义构造方法将图片传入
-    public ImageListAdapter(ArrayList<Bitmap> bitmaps) {
-        this.bitmaps = bitmaps;
+    public ImageListAdapter(Context context, Resources res) {
+        this.context = context;
+        bitmapWorker = new BitmapWorker(context, res);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,9 +56,18 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
-        //根据类型找到找到相应的view，这里只有一种view，所以不进行判断
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.image_list_item, viewGroup, false);
+        View v;
+        //根据类型找到找到相应的view，这里只有一种view
+        switch (viewType) {
+            case DEFAULT_TYPE:
+               v = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.image_list_item, viewGroup, false);
+                break;
+            default:
+                v = LayoutInflater.from(viewGroup.getContext())
+                        .inflate(R.layout.image_list_item, viewGroup, false);
+                break;
+       }
 
         //返回一个封装了view的ViewHolder
         return new ViewHolder(v);
@@ -59,22 +76,15 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
 
-        //对ViewHolder中的控件进行内容的更新
-        viewHolder.getImageView().setImageBitmap(bitmaps.get(position));
+        ImageView imageView = viewHolder.getImageView();
+
+        bitmapWorker.loadImage(Images.imageUrls[position], imageView);
+
     }
 
     @Override
     public int getItemCount() {
-        return bitmaps.size();
+        return bitmapSize;
     }
 
-    public void addItem(Bitmap bitmap, int position) {
-        bitmaps.add(position, bitmap);
-        notifyItemInserted(position);
-    }
-
-    public void delete(Bitmap bitmap, int position) {
-        bitmaps.remove(position);
-        notifyItemInserted(position);
-    }
 }
