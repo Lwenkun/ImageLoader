@@ -45,7 +45,7 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
 
                 }
             });
-            imageView = (ImageView) v.findViewById(R.id.image_list);
+            imageView = (ImageView) v.findViewById(R.id.image_view);
         }
 
         public ImageView getImageView() {

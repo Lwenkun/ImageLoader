@@ -7,6 +7,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         RecyclerView rv_imageList = (RecyclerView) findViewById(R.id.image_list);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true);
+        rv_imageList.setLayoutManager(new GridLayoutManager(this, 3));
         rv_imageList.setAdapter(new ImageListAdapter(MainActivity.this, getResources()));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

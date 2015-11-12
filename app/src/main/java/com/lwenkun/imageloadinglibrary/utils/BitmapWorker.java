@@ -31,7 +31,7 @@ public class BitmapWorker {
         int maxMemory = (int) Runtime.getRuntime().maxMemory() / 8;
         imageLruCache = new LruCache<>(maxMemory);
         diskCache = new DiskCache(context, DISK_CACHE_FILE_NAME);
-        defaultBitmap = BitmapFactory.decodeResource(res, R.drawable.side_nav_bar);
+        defaultBitmap = BitmapFactory.decodeResource(res, R.drawable.placehold);
     }
 
     public void loadImage(String imageUrls, ImageView imageView) {
@@ -59,13 +59,14 @@ public class BitmapWorker {
     }
 
     public BitmapWorkerTask getBitmapWorkTask(ImageView imageView) {
-        BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+        if(imageView != null) {
+            BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
 
-        if(drawable instanceof AsyncDrawable) {
+            if(drawable instanceof AsyncDrawable) {
 
-            return ((AsyncDrawable) drawable).getBitmapWorkerTask();
+                return ((AsyncDrawable) drawable).getBitmapWorkerTask();
+            }
         }
-
         return null;
     }
 

@@ -20,5 +20,7 @@ public class AsyncDrawable extends BitmapDrawable {
     public BitmapWorkerTask getBitmapWorkerTask() {
         if(bitmapWorkerTaskWeakReference != null)
         return bitmapWorkerTaskWeakReference.get();
+        return null;
     }
+
 }
