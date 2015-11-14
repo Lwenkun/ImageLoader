@@ -3,10 +3,12 @@ package com.lwenkun.imageloadinglibrary.adapter;
 import android.content.Context;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.lwenkun.imageloadinglibrary.R;
 import com.lwenkun.imageloadinglibrary.provider.Images;
@@ -37,12 +39,13 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
 
         //保存view，给view注册监听事件，找到view中的控件
         public ViewHolder(View v) {
+
             super(v);
 
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Toast.makeText(v.getContext(), "hello", Toast.LENGTH_SHORT).show();
                 }
             });
             imageView = (ImageView) v.findViewById(R.id.image_view);
@@ -77,8 +80,8 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
 
         ImageView imageView = viewHolder.getImageView();
-
-        bitmapWorker.loadImage(Images.imageUrls[position], imageView);
+        Log.d("hashcode", "hashcode" + imageView.hashCode());
+        bitmapWorker.loadImage(position, imageView);
 
     }
 

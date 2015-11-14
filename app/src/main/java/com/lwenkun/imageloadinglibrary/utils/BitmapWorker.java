@@ -16,7 +16,7 @@ import com.lwenkun.imageloadinglibrary.cache.DiskCache;
  */
 public class BitmapWorker {
 
-    private static final String DISK_CACHE_FILE_NAME = "cache";
+    private static final String DISK_CACHE_DIR_NAME = "cache";
 
     private final Bitmap defaultBitmap;
 
@@ -24,33 +24,38 @@ public class BitmapWorker {
 
     private static DiskCache diskCache;
 
-    private static LruCache<String, Bitmap> imageLruCache;
+    private static LruCache<Integer, Bitmap> imageLruCache;
 
     public BitmapWorker(Context context, Resources res) {
         this.res = res;
         int maxMemory = (int) Runtime.getRuntime().maxMemory() / 8;
         imageLruCache = new LruCache<>(maxMemory);
-        diskCache = new DiskCache(context, DISK_CACHE_FILE_NAME);
+        diskCache = new DiskCache(context, DISK_CACHE_DIR_NAME);
         defaultBitmap = BitmapFactory.decodeResource(res, R.drawable.placehold);
     }
 
-    public void loadImage(String imageUrls, ImageView imageView) {
+    public void loadImage(int index, ImageView imageView) {
 
-        if(cancelBitmapTask(imageUrls, imageView)) {
+        if(cancelBitmapTask(index, imageView)) {
             BitmapWorkerTask task = new BitmapWorkerTask(imageView, imageLruCache, diskCache);
             AsyncDrawable  asyncDrawable = new AsyncDrawable(res, defaultBitmap, task);
+            //显示占位图
             imageView.setImageDrawable(asyncDrawable);
-            task.execute(imageUrls);
+            task.execute(index);
         }
     }
 
-    public boolean cancelBitmapTask(String imageUrls, ImageView imageView) {
+    public boolean cancelBitmapTask(int index, ImageView imageView) {
+        //获得当前ImageView绑定的Task
         final BitmapWorkerTask bitmapWorkerTask = getBitmapWorkTask(imageView);
 
+        //如果task不为空
         if(bitmapWorkerTask != null) {
-            if (imageUrls.equals(bitmapWorkerTask.getData())) {
+           // 该Task的索引值与目前的索引值相同，即该ImageView绑定的的task是当前请求的task，不取消
+            if (index == bitmapWorkerTask.getIndex()) {
                 return false;
             } else {
+                //如果索引值不相同，即该ImageView绑定的task不是当前所请求的task，将其取消
                 bitmapWorkerTask.cancel(true);
             }
         }
@@ -60,13 +65,17 @@ public class BitmapWorker {
 
     public BitmapWorkerTask getBitmapWorkTask(ImageView imageView) {
         if(imageView != null) {
+            //获取Imageview的drawable对象
             BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
 
+            //如果该drawable是AsyncDrawable的一个实例，则ImageView显示的还是占位图且正在获取图片中
             if(drawable instanceof AsyncDrawable) {
 
                 return ((AsyncDrawable) drawable).getBitmapWorkerTask();
             }
         }
+
+        //如果ImageView为空或者显示的不是占位图，则task为空
         return null;
     }
 
