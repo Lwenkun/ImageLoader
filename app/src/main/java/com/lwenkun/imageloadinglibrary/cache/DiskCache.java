@@ -1,81 +1,127 @@
 package com.lwenkun.imageloadinglibrary.cache;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by 15119 on 2015/11/10.
  */
 public class DiskCache {
 
-    final String TAG = "DiskCacheTask";
+    private static DiskCache diskCache;
 
-    private final Context context;
+    private Context context;
 
-    private final String cacheFileDirName;
-
-    public DiskCache(Context context, String cacheFileDirName) {
+    private DiskCache(Context context) {
         this.context = context;
-        this.cacheFileDirName = cacheFileDirName;
     }
 
-    public File getCacheFileDir(String cacheFileDirName) {
+    public static DiskCache getInstance(Context context) {
 
-        String state = Environment.getExternalStorageState();
+        if (diskCache == null || ! context.equals(diskCache.context)) {
 
-        File cacheFileDir;
+            diskCache = new DiskCache(context);
 
-        if(Environment.MEDIA_MOUNTED.equals(state)) {
-            cacheFileDir = new File(Environment.getExternalStorageDirectory(), cacheFileDirName);
-        } else {
-            cacheFileDir = new File(context.getFilesDir(), cacheFileDirName);
         }
 
-        return cacheFileDir;
+        return diskCache;
     }
 
-    public void save(int index, Bitmap bitmap) {
-        //在缓存目录下创建缓存文件
-        File cacheFile = new File(getCacheFileDir(cacheFileDirName), String.valueOf(index));
-        //创建图片缓存文件
-        Log.d("testFile", "successful");
-        if(!cacheFile.exists()) {
-            try {
-                if(cacheFile.createNewFile()) {
-                    Log.d(TAG, "文件创建成功！");
-                    FileOutputStream out = new FileOutputStream(cacheFile);
-                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
 
+    /**
+     *
+     * @param cacheDirName 要保存的文件目录的名称
+     * @param cacheFileName 要保存的文件名称
+     * @param is 要保存的内容的InputStream
+     */
+    public void save(String cacheDirName, String cacheFileName, InputStream is) {
 
-    }
+        FileOutputStream fileOutputStream = null;
 
-    public Bitmap getBitmapFromDiskCache(int index) {
-
-        Bitmap bitmap;
-
-        File cacheFile = new File(getCacheFileDir(cacheFileDirName), String.valueOf(index));
+        File cacheFile = new File(getCacheDir(cacheDirName), cacheFileName);
 
         try {
-            FileInputStream fileInputStream = new FileInputStream(cacheFile);
-            bitmap = BitmapFactory.decodeStream(fileInputStream);
+            //创建缓存文件并创建文件输出流
+            if (cacheFile.createNewFile()) {
+                fileOutputStream = new FileOutputStream(cacheFile);
+            } else {
+                Toast.makeText(context, "缓存文件创建失败，请检查磁盘空间是否充足", Toast.LENGTH_SHORT).show();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            Log.d("bug", "文件创建失败");
         }
 
-        return bitmap;
+        BufferedOutputStream bos = null;
+
+        if (fileOutputStream != null) {
+
+             bos = new BufferedOutputStream(fileOutputStream);
+        }
+
+        BufferedInputStream bis = new BufferedInputStream(is);
+        try {
+
+            int b;
+
+            if (bos != null)
+            while ((b = bis.read()) != -1) {
+
+                bos.write(b);
+            } else {
+                Toast.makeText(context, "缓存文件创建失败，请检查磁盘空间是否充足", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+                e.printStackTrace();
+            Log.d("bug", "文件写入错误");
+            }
+
     }
+
+
+    private File getCacheDir(String cacheDirName) {
+
+        File cacheDir;
+
+        if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+                || !Environment.isExternalStorageRemovable()) {
+            cacheDir = new File(context.getExternalCacheDir(), cacheDirName);
+        } else {
+            cacheDir = new File(context.getCacheDir(), cacheDirName);
+        }
+
+        return cacheDir;
+    }
+
+    public boolean clearCacheDir(String cacheDirName) {
+
+        File fileToDelete = getCacheDir(cacheDirName);
+
+        return fileToDelete.delete();
+    }
+
+    public FileOutputStream get(String cacheDirName, String cacheFileName) {
+
+        File file = new File(getCacheDir(cacheDirName), cacheFileName);
+        FileOutputStream out = null;
+
+        try {
+            out = new FileOutputStream(file);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("bug", "无法获取缓存文件");
+        }
+
+        return out;
+    }
+
 }

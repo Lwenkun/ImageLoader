@@ -5,40 +5,29 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.util.LruCache;
 import android.widget.ImageView;
 
 import com.lwenkun.imageloadinglibrary.R;
-import com.lwenkun.imageloadinglibrary.cache.DiskCache;
 
 /**
  * Created by 15119 on 2015/11/9.
  */
 public class BitmapWorker {
 
-    private static final String DISK_CACHE_DIR_NAME = "cache";
-
     private final Bitmap defaultBitmap;
 
     private final Resources res;
 
-    private static DiskCache diskCache;
-
-    private static LruCache<Integer, Bitmap> imageLruCache;
-
     public BitmapWorker(Context context, Resources res) {
         this.res = res;
-        int maxMemory = (int) Runtime.getRuntime().maxMemory() / 8;
-        imageLruCache = new LruCache<>(maxMemory);
-        diskCache = new DiskCache(context, DISK_CACHE_DIR_NAME);
         defaultBitmap = BitmapFactory.decodeResource(res, R.drawable.placehold);
     }
 
     public void loadImage(int index, ImageView imageView) {
 
         if(cancelBitmapTask(index, imageView)) {
-            BitmapWorkerTask task = new BitmapWorkerTask(imageView, imageLruCache, diskCache);
-            AsyncDrawable  asyncDrawable = new AsyncDrawable(res, defaultBitmap, task);
+            BitmapWorkerTask task = new BitmapWorkerTask(imageView);
+            AsyncDrawable asyncDrawable = new AsyncDrawable(res, defaultBitmap, task);
             //显示占位图
             imageView.setImageDrawable(asyncDrawable);
             task.execute(index);

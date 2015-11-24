@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.util.LruCache;
 import android.widget.ImageView;
 
 import com.lwenkun.imageloadinglibrary.cache.DiskCache;
@@ -21,38 +20,37 @@ public class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
 
     private ImageView imageView;
 
-    private final LruCache<Integer, Bitmap> imageLruCache;
+    private DiskCache diskCache = DiskCache.getInstance();
 
-    private final DiskCache diskCache;
-
-    public BitmapWorkerTask(ImageView imageView, LruCache<Integer, Bitmap> imageLruCache, DiskCache diskCache) {
+    public BitmapWorkerTask(ImageView imageView) {
         this.imageView = imageView;
-        this.imageLruCache = imageLruCache;
-        this.diskCache = diskCache;
     }
 
     private int index;
 
     @Override
     protected void onPreExecute() {
+
         super.onPreExecute();
+
     }
 
     @Override
     protected void onProgressUpdate(Void...values) {
+
         super.onProgressUpdate(values);
+
     }
 
     //从网络获取bitmap
     @Override
     protected Bitmap doInBackground(Integer... params) {
+
         index = params[0];
 
-        Bitmap bitmap;
+        Bitmap bitmap = Common.imageLruCache.get(index);
 
-        bitmap = diskCache.getBitmapFromDiskCache(index);
-
-        if( bitmap == null) bitmap = imageLruCache.get(index);
+        if( bitmap == null) bitmap = BitmapFactory.decodeStream(diskCache.get(index));
 
         if(bitmap == null) {
 
@@ -65,6 +63,7 @@ public class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
                 conn.setConnectTimeout(8000);
                 conn.setRequestMethod("GET");
                 InputStream is = conn.getInputStream();
+                diskCache.save("bitmap", MD5.);
                 bitmap = decodeBitmapFromInputStream(is);
                 Log.d("test", "here");
 
@@ -80,17 +79,16 @@ public class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
 
     //从is中获取指定大小的bitmap
     public Bitmap decodeBitmapFromInputStream(InputStream is) {
-//        BitmapFactory.Options options = new BitmapFactory.Options();
-//        //计算出bitmap的实际大小
-//        options.inJustDecodeBounds = true;
-//        BitmapFactory.decodeStream(is, null, options);
-//        //计算缩小倍数
-//        Log.d("width", "width" + options.outWidth + "height" + options.outHeight );
-//        options.inSampleSize = calInSampleSize(options, 100, 100);
-//        //获取bitmap
-//        options.inJustDecodeBounds = false;
-//        return BitmapFactory.decodeStream(is, null, options);
-        return BitmapFactory.decodeStream(is);
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        //计算出bitmap的实际大小
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeStream(is, null, options);
+        //计算缩小倍数
+        Log.d("width", "width" + options.outWidth + "height" + options.outHeight );
+        options.inSampleSize = calInSampleSize(options, 100, 100);
+        //获取bitmap
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeStream(is, null, options);
     }
 
     //计算合适的缩小倍数
@@ -118,9 +116,6 @@ public class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
     protected void onPostExecute(Bitmap bitmap) {
 
         if(bitmap != null) {
-            if(imageView == null) {
-                Log.d("test", "imageView is null");
-            }
             imageView.setImageBitmap(bitmap);
             Log.d("hashcode", "hashcode" + imageView.hashCode());
             saveBitmapToCache(bitmap);
@@ -132,7 +127,9 @@ public class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
 
     //分别保存到磁盘和内存
     public void saveBitmapToCache(Bitmap bitmap) {
-        diskCache.save(index, bitmap);
+        if(diskCache.get(index) == null) {
+            diskCache.save(index, bitmap);
+        }
         imageLruCache.put(index, bitmap);
     }
 
