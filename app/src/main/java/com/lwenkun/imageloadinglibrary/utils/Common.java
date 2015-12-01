@@ -8,7 +8,9 @@ import android.util.LruCache;
  */
 public class Common {
 
+    public static String cacheDirName = "bitmap";
+
     static int cacheSize = (int) Runtime.getRuntime().maxMemory() / 8;
 
-    public  static LruCache<Integer, Bitmap> imageLruCache = new LruCache<>(cacheSize);
+    public  static LruCache<String, Bitmap> imageLruCache = new LruCache<>(cacheSize);
 }

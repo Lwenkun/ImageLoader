@@ -3,11 +3,11 @@ package com.lwenkun.imageloadinglibrary.cache;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
@@ -46,14 +46,23 @@ public class DiskCache {
 
         FileOutputStream fileOutputStream = null;
 
+
+
         File cacheFile = new File(getCacheDir(cacheDirName), cacheFileName);
 
         try {
-            //创建缓存文件并创建文件输出流
+            //创建缓存文件目录
+            File aFile;
+            if(! (aFile = getCacheDir(cacheDirName)).exists())
+                if(aFile.mkdir()) Log.d("notice", "create the dir successfully");
+
+            if(cacheFile.exists()) return;
+
             if (cacheFile.createNewFile()) {
                 fileOutputStream = new FileOutputStream(cacheFile);
+                Log.d("cacheFile", "cacheFile created successfully");
             } else {
-                Toast.makeText(context, "缓存文件创建失败，请检查磁盘空间是否充足", Toast.LENGTH_SHORT).show();
+                Log.d("error", "缓存文件创建失败，请检查磁盘空间是否充足");
             }
 
         } catch (Exception e) {
@@ -65,25 +74,29 @@ public class DiskCache {
 
         if (fileOutputStream != null) {
 
-             bos = new BufferedOutputStream(fileOutputStream);
+            bos = new BufferedOutputStream(fileOutputStream);
+            Log.d("bos", "successful");
         }
 
+        //将数据流写入缓存文件
         BufferedInputStream bis = new BufferedInputStream(is);
         try {
 
             int b;
 
-            if (bos != null)
-            while ((b = bis.read()) != -1) {
+            if (bos != null) {
 
-                bos.write(b);
+                while ((b = bis.read()) != -1) {
+                    bos.write(b);
+                }
+
             } else {
-                Toast.makeText(context, "缓存文件创建失败，请检查磁盘空间是否充足", Toast.LENGTH_SHORT).show();
+                Log.d("bug2", "缓存文件创建失败，请检查磁盘空间是否充足");
             }
         } catch (Exception e) {
-                e.printStackTrace();
+            e.printStackTrace();
             Log.d("bug", "文件写入错误");
-            }
+        }
 
     }
 
@@ -102,6 +115,7 @@ public class DiskCache {
         return cacheDir;
     }
 
+
     public boolean clearCacheDir(String cacheDirName) {
 
         File fileToDelete = getCacheDir(cacheDirName);
@@ -109,19 +123,29 @@ public class DiskCache {
         return fileToDelete.delete();
     }
 
-    public FileOutputStream get(String cacheDirName, String cacheFileName) {
+
+    public InputStream get(String cacheDirName, String cacheFileName) {
 
         File file = new File(getCacheDir(cacheDirName), cacheFileName);
-        FileOutputStream out = null;
+
+        BufferedInputStream fis = null;
+        FileInputStream in;
 
         try {
-            out = new FileOutputStream(file);
+
+            if(! file.exists()) return null;
+
+            in = new FileInputStream(file);
+            fis = new BufferedInputStream(in);
+
+
         } catch (Exception e) {
+
             e.printStackTrace();
             Log.d("bug", "无法获取缓存文件");
         }
 
-        return out;
+        return fis;
     }
 
 }

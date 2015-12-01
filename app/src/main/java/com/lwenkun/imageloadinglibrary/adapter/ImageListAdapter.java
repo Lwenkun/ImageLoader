@@ -56,12 +56,12 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
 
     }
 
-   //函数调用后获得Viewholder应该和viewtype绑定在一起；以后直接调用onBindViewHolder()就能根据type获得相应的viewholder
+    //函数调用后获得Viewholder应该和viewtype绑定在一起；以后直接调用onBindViewHolder()就能根据type获得相应的viewholder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
         View v = LayoutInflater.from(viewGroup.getContext())
-                        .inflate(R.layout.image_list_item, viewGroup, false);
+                .inflate(R.layout.image_list_item, viewGroup, false);
 
         //返回一个封装了view的ViewHolder
         return new ViewHolder(v);
@@ -72,12 +72,13 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
 
         ImageView imageView = viewHolder.getImageView();
 
-        bitmapWorker.loadImage(position, imageView);
+        bitmapWorker.loadImage(Images.imageUrls[position], imageView);
     }
 
     @Override
     public int getItemCount() {
         return Images.imageUrls.length;
     }
+
 
 }

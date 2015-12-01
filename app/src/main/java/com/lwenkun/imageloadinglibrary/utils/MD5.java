@@ -12,7 +12,7 @@ public class MD5 {
      * @param key 需要转换的字符串
      * @return 转换后的字符串
      */
-    public String hashKeyForDisk(String key) {
+    public static String hashKeyForDisk(String key) {
 
         String cacheKey;
 
@@ -37,7 +37,7 @@ public class MD5 {
      * @param bytes 带转换的字节数组
      * @return 转换后的字符串
      */
-    public String byteToHexString(byte[] bytes) {
+    private static String byteToHexString(byte[] bytes) {
 
         StringBuilder hexString = new StringBuilder();
 
@@ -53,6 +53,6 @@ public class MD5 {
             hexString.append(str);
         }
 
-          return hexString.toString();
+        return hexString.toString();
     }
 }
