@@ -1,8 +1,10 @@
-package com.lwenkun.imageloadinglibrary.utils;
+package com.lwenkun.imageloadinglibrary.ui;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+
+import com.lwenkun.imageloadinglibrary.utils.BitmapWorkerTask;
 
 import java.lang.ref.WeakReference;
 

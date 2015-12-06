@@ -20,88 +20,77 @@ public class DiskCache {
 
     private Context context;
 
-    private DiskCache(Context context) {
+    final byte[] LOCK_READ = new byte[0];
+
+    final byte[] LOCK_WRITE = new byte[0];
+
+    static final byte[] LOCK_INIT = new byte[0];
+
+    final byte[] LOCK_DELETE = new byte[0];
+
+    private File root;
+
+    private DiskCache(Context context, String cacheDirName) {
+
         this.context = context;
-    }
-
-    public static DiskCache getInstance(Context context) {
-
-        if (diskCache == null || ! context.equals(diskCache.context)) {
-
-            diskCache = new DiskCache(context);
-
-        }
-
-        return diskCache;
+        root = getCacheDir(cacheDirName);
+        root.mkdir();
     }
 
 
     /**
      *
-     * @param cacheDirName 要保存的文件目录的名称
-     * @param cacheFileName 要保存的文件名称
-     * @param is 要保存的内容的InputStream
+     * @param context context
+     * @param cacheDirName 缓存目录名
+     * @return 磁盘缓存实例
      */
-    public void save(String cacheDirName, String cacheFileName, InputStream is) {
+    public  static DiskCache getInstance(Context context, String cacheDirName) {
 
-        FileOutputStream fileOutputStream = null;
+        if(diskCache == null) {
 
+            synchronized (LOCK_INIT) {
+                if (diskCache == null) {
 
-
-        File cacheFile = new File(getCacheDir(cacheDirName), cacheFileName);
-
-        try {
-            //创建缓存文件目录
-            File aFile;
-            if(! (aFile = getCacheDir(cacheDirName)).exists())
-                if(aFile.mkdir()) Log.d("notice", "create the dir successfully");
-
-            if(cacheFile.exists()) return;
-
-            if (cacheFile.createNewFile()) {
-                fileOutputStream = new FileOutputStream(cacheFile);
-                Log.d("cacheFile", "cacheFile created successfully");
-            } else {
-                Log.d("error", "缓存文件创建失败，请检查磁盘空间是否充足");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("bug", "文件创建失败");
-        }
-
-        BufferedOutputStream bos = null;
-
-        if (fileOutputStream != null) {
-
-            bos = new BufferedOutputStream(fileOutputStream);
-            Log.d("bos", "successful");
-        }
-
-        //将数据流写入缓存文件
-        BufferedInputStream bis = new BufferedInputStream(is);
-        try {
-
-            int b;
-
-            if (bos != null) {
-
-                while ((b = bis.read()) != -1) {
-                    bos.write(b);
+                    diskCache = new DiskCache(context, cacheDirName);
                 }
-
-            } else {
-                Log.d("bug2", "缓存文件创建失败，请检查磁盘空间是否充足");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.d("bug", "文件写入错误");
         }
+        return diskCache;
 
     }
 
 
-    private File getCacheDir(String cacheDirName) {
+    /**
+     * @param cacheFileName 要保存的文件名称
+     * @param bytes 要保存的内容的InputStream
+     */
+    public void save(String cacheFileName, byte[] bytes) {
+
+        synchronized (LOCK_WRITE) {
+
+            File cacheFile = new File(root, cacheFileName);
+
+            try {
+
+                if (cacheFile.exists()) {
+                    delete(cacheFile);
+                }
+
+                BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(cacheFile));
+
+                bos.write(bytes, 0, bytes.length);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     *
+     * @param cacheDirName 缓存文件名
+     * @return 缓存目录的File对象
+     */
+    public File getCacheDir(String cacheDirName) {
 
         File cacheDir;
 
@@ -116,15 +105,7 @@ public class DiskCache {
     }
 
 
-    public boolean clearCacheDir(String cacheDirName) {
-
-        File fileToDelete = getCacheDir(cacheDirName);
-
-        return fileToDelete.delete();
-    }
-
-
-    public InputStream get(String cacheDirName, String cacheFileName) {
+    public InputStream getStream(String cacheDirName, String cacheFileName) {
 
         File file = new File(getCacheDir(cacheDirName), cacheFileName);
 
@@ -138,7 +119,6 @@ public class DiskCache {
             in = new FileInputStream(file);
             fis = new BufferedInputStream(in);
 
-
         } catch (Exception e) {
 
             e.printStackTrace();
@@ -146,6 +126,26 @@ public class DiskCache {
         }
 
         return fis;
+    }
+
+
+    public String getCacheFilePath(String cacheFileName) {
+
+        File file = new File(root, cacheFileName);
+
+        if(! file.exists()) return null;
+
+        return file.getPath();
+    }
+
+
+    public void delete(File file) {
+
+        synchronized (LOCK_DELETE) {
+            if(file.exists()) {
+                file.delete();
+            }
+        }
     }
 
 }
