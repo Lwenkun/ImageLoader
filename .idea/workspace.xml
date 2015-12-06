@@ -6,14 +6,11 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="bytes" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="work" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e957b6f-fb44-4335-a27c-b04616002b5f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java" />
-      <change type="DELETED" beforePath="C:\Users\15119\Desktop\ImageLoadingLibrary\app\src\main\java\com\lwenkun\imageloadinglibrary\utils\Common.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\15119\Desktop\ImageLoadingLibrary\app\src\main\java\com\lwenkun\imageloadinglibrary\utils\AsyncDrawable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/AsyncDrawable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java" />
@@ -45,15 +42,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BitmapWorkerTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BitmapWorkerTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42190304">
-              <caret line="178" column="47" selection-start-line="178" selection-start-column="47" selection-end-line="178" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5443#5444#0" expanded="true" />
-                <element signature="e#5470#5471#0" expanded="true" />
+                <element signature="e#4767#4768#0" expanded="true" />
+                <element signature="e#4794#4795#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/AsyncDrawable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -99,17 +96,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/MD5.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+              <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BitmapWorker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BitmapWorker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+            <state vertical-scroll-proportion="-2.7457628">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -1586,9 +1583,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/AsyncDrawable.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/adapter/ImageListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" />
       </list>
     </option>
   </component>
@@ -2010,13 +2007,13 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34641638" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34641638" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
@@ -2092,8 +2089,8 @@
           <caret line="77" column="55" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#4767#4768#0" expanded="true" />
+            <element signature="e#4794#4795#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2173,8 +2170,8 @@
           <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#4767#4768#0" expanded="true" />
+            <element signature="e#4794#4795#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2236,8 +2233,8 @@
           <caret line="109" column="36" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#4767#4768#0" expanded="true" />
+            <element signature="e#4794#4795#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2323,8 +2320,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#4767#4768#0" expanded="true" />
+            <element signature="e#4794#4795#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2475,10 +2472,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/java/io/InputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45421904">
+          <caret line="175" column="64" selection-start-line="175" selection-start-column="64" selection-end-line="175" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/MD5.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -2497,26 +2502,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/AsyncDrawable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/java/io/InputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45421904">
-          <caret line="175" column="64" selection-start-line="175" selection-start-column="64" selection-end-line="175" selection-end-column="64" />
+          <caret line="0" column="43" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -2524,20 +2513,28 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42190304">
-          <caret line="178" column="47" selection-start-line="178" selection-start-column="47" selection-end-line="178" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5443#5444#0" expanded="true" />
-            <element signature="e#5470#5471#0" expanded="true" />
+            <element signature="e#4767#4768#0" expanded="true" />
+            <element signature="e#4794#4795#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7457628">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

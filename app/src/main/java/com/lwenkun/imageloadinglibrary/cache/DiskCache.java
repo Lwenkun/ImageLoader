@@ -39,14 +39,13 @@ public class DiskCache {
 
 
     /**
-     *
-     * @param context context
+     * @param context      context
      * @param cacheDirName 缓存目录名
      * @return 磁盘缓存实例
      */
-    public  static DiskCache getInstance(Context context, String cacheDirName) {
+    public static DiskCache getInstance(Context context, String cacheDirName) {
 
-        if(diskCache == null) {
+        if (diskCache == null) {
 
             synchronized (LOCK_INIT) {
                 if (diskCache == null) {
@@ -62,7 +61,7 @@ public class DiskCache {
 
     /**
      * @param cacheFileName 要保存的文件名称
-     * @param bytes 要保存的内容的InputStream
+     * @param bytes         要保存的内容的InputStream
      */
     public void save(String cacheFileName, byte[] bytes) {
 
@@ -86,7 +85,6 @@ public class DiskCache {
     }
 
     /**
-     *
      * @param cacheDirName 缓存文件名
      * @return 缓存目录的File对象
      */
@@ -94,7 +92,7 @@ public class DiskCache {
 
         File cacheDir;
 
-        if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
                 || !Environment.isExternalStorageRemovable()) {
             cacheDir = new File(context.getExternalCacheDir(), cacheDirName);
         } else {
@@ -114,7 +112,7 @@ public class DiskCache {
 
         try {
 
-            if(! file.exists()) return null;
+            if (!file.exists()) return null;
 
             in = new FileInputStream(file);
             fis = new BufferedInputStream(in);
@@ -133,7 +131,7 @@ public class DiskCache {
 
         File file = new File(root, cacheFileName);
 
-        if(! file.exists()) return null;
+        if (!file.exists()) return null;
 
         return file.getPath();
     }
@@ -142,7 +140,7 @@ public class DiskCache {
     public void delete(File file) {
 
         synchronized (LOCK_DELETE) {
-            if(file.exists()) {
+            if (file.exists()) {
                 file.delete();
             }
         }

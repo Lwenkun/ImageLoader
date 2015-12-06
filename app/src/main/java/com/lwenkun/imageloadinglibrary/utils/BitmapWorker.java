@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.lwenkun.imageloadinglibrary.R;
@@ -62,11 +61,7 @@ public class BitmapWorker {
             if (imageUrl == null || !imageUrl.equals(key)) {
 
                 bitmapWorkerTask.cancel(true);
-                Log.d("BitmapWorker", "任务不同");
-
             } else {
-                Log.d("BitmapWorker", "任务相同");
-
                 //如果不相同，即该ImageView绑定的task不是当前所请求的task，将其取消
                 return false;
             }
@@ -89,11 +84,9 @@ public class BitmapWorker {
                 return ((AsyncDrawable) drawable).getBitmapWorkerTask();
             }
         }
-
         //如果ImageView为空或者显示的不是占位图，则task为空
         return null;
     }
-
 
 }
 

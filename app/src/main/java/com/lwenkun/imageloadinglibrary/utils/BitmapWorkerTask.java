@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.lwenkun.imageloadinglibrary.cache.DiskCache;
@@ -84,34 +83,16 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
         BitmapFactory.Options options = new BitmapFactory.Options();
 
-//       // 计算出bitmap的实际大小
-//
-//        options.inJustDecodeBounds = true;
-//
-//        BitmapFactory.decodeStream(is, null, options);
-//
-//        //计算缩小倍数
-//        Log.d("size", "width" + options.outWidth + "height" + options.outHeight);
-//        options.inSampleSize = calInSampleSize(options, 100, 100);
-//        Log.d("inSampleSize", "" + options.inSampleSize);
-//
-//       // 获取bitmap
+       // 计算出bitmap的实际大小
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
 
-        options.inSampleSize = 8;
+        //计算缩小倍数
+        options.inSampleSize = calInSampleSize(options, 100, 100);
+
         options.inJustDecodeBounds = false;
 
-//        try {
-//            is = conn.getInputStream();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-
-        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-        if(bitmap == null) {
-            Log.d("bitmap", "为空");
-        }
-        return bitmap;
+        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
 
     }
 
@@ -158,7 +139,6 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
         HttpURLConnection conn = null;
 
         try {
-
             URL url = new URL(sUrl);
             conn = (HttpURLConnection) url.openConnection();
             conn.setDoInput(true);
@@ -168,27 +148,24 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
             InputStream is = conn.getInputStream();
 
             BufferedInputStream bos = new BufferedInputStream(is, 1024);
-            byte bytes[] = new byte[1024];
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
             int length;
+            byte bytes[] = new byte[1024];
             while((length = bos.read(bytes)) != -1) {
                 baos.write(bytes, 0, length);
             }
 
             byte[] bytes1 = baos.toByteArray();
-            Log.d("bytes", length+"");
 
-            if(!isCancelled()) {
-                String cacheFileName = MD5.hashKeyForDisk(sUrl);
-                diskCache.save(cacheFileName, bytes1);
-            }
+            String cacheFileName = MD5.hashKeyForDisk(sUrl);
+            diskCache.save(cacheFileName, bytes1);
+
             bitmap = decodeSampleFromBytes(bytes1);
 
-           // conn = (HttpURLConnection) url.openConnection();
-
         } catch (Exception e) {
-            Log.d("BitmapTask", "failed");
+
             e.printStackTrace();
         } finally {
             if(conn != null) {
