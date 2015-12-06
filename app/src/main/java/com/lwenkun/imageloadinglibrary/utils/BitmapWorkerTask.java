@@ -65,15 +65,9 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 8;
-            Bitmap bitmap = BitmapFactory.decodeFile(diskCache.getCacheFilePath(cacheFileName), options);
+            Bitmap bitmap = BitmapFactory.decodeStream(diskCache.getStream(cacheFileName), null, options);
 
-            if (bitmap != null)
-                imageLruCache.put(sUrl, bitmap);
-            else
-                bitmap = downloadBitmap(sUrl);
-            if (bitmap != null) {
-                imageLruCache.put(sUrl, bitmap);
-            }
+            if (bitmap == null) bitmap = downloadBitmap(sUrl);
 
         return bitmap;
     }
@@ -126,6 +120,7 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
         if (bitmap != null && imageViewWeakReference != null) {
 
+            imageLruCache.put(sUrl, bitmap);
             ImageView imageView = imageViewWeakReference.get();
             if (imageView != null) {
                 imageView.setImageBitmap(bitmap);

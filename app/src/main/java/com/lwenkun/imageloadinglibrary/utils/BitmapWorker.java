@@ -67,7 +67,8 @@ public class BitmapWorker {
             }
         }
 
-        //该任务还没有设置url或者该任务和当前任务不相同或者该ImageView绑定的任务不存在
+        //该任务还没有设置url或者该任务和当前任务不相同或者该ImageView
+        // 绑定的任务不存在(url不存在可能是因为url的设置在后台线程里）
         return true;
     }
 

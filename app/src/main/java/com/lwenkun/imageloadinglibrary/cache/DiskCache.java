@@ -20,8 +20,6 @@ public class DiskCache {
 
     private Context context;
 
-    final byte[] LOCK_READ = new byte[0];
-
     final byte[] LOCK_WRITE = new byte[0];
 
     static final byte[] LOCK_INIT = new byte[0];
@@ -36,7 +34,6 @@ public class DiskCache {
         root = getCacheDir(cacheDirName);
         root.mkdir();
     }
-
 
     /**
      * @param context      context
@@ -57,7 +54,6 @@ public class DiskCache {
         return diskCache;
 
     }
-
 
     /**
      * @param cacheFileName 要保存的文件名称
@@ -103,19 +99,19 @@ public class DiskCache {
     }
 
 
-    public InputStream getStream(String cacheDirName, String cacheFileName) {
+    public InputStream getStream(String cacheFileName) {
 
-        File file = new File(getCacheDir(cacheDirName), cacheFileName);
+        File file = new File(root, cacheFileName);
 
-        BufferedInputStream fis = null;
-        FileInputStream in;
+        BufferedInputStream bis = null;
+        FileInputStream fis;
 
         try {
 
             if (!file.exists()) return null;
 
-            in = new FileInputStream(file);
-            fis = new BufferedInputStream(in);
+            fis = new FileInputStream(file);
+            bis = new BufferedInputStream(fis);
 
         } catch (Exception e) {
 
@@ -123,17 +119,7 @@ public class DiskCache {
             Log.d("bug", "无法获取缓存文件");
         }
 
-        return fis;
-    }
-
-
-    public String getCacheFilePath(String cacheFileName) {
-
-        File file = new File(root, cacheFileName);
-
-        if (!file.exists()) return null;
-
-        return file.getPath();
+        return bis;
     }
 
 
