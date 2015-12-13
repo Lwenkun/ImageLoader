@@ -66,11 +66,9 @@ public class DiskCache {
             File cacheFile = new File(root, cacheFileName);
 
             try {
-
                 if (cacheFile.exists()) {
                     delete(cacheFile);
                 }
-
                 BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(cacheFile));
 
                 bos.write(bytes, 0, bytes.length);
@@ -107,7 +105,6 @@ public class DiskCache {
         FileInputStream fis;
 
         try {
-
             if (!file.exists()) return null;
 
             fis = new FileInputStream(file);

@@ -31,8 +31,6 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
     private String sUrl;
 
-    private String cacheFileName;
-
 
     public BitmapWorkerTask(Context context, ImageView imageView) {
 
@@ -60,16 +58,28 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
     @Override
     protected Bitmap doInBackground(String... params) {
 
-            sUrl = params[0];
-            cacheFileName = MD5.hashKeyForDisk(sUrl);
+        sUrl = params[0];
+        String cacheFileName = MD5.hashKeyForDisk(sUrl);
 
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inSampleSize = 8;
-            Bitmap bitmap = BitmapFactory.decodeStream(diskCache.getStream(cacheFileName), null, options);
+        //从磁盘缓存中获取文件
+        Bitmap bitmap = getBitmapFromDiskCache(cacheFileName);
 
-            if (bitmap == null) bitmap = downloadBitmap(sUrl);
+        if (bitmap == null) bitmap = downloadBitmap(sUrl);
 
         return bitmap;
+    }
+
+    public Bitmap getBitmapFromDiskCache(String cacheFileName) {
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeStream(diskCache.getStream(cacheFileName), null, options);
+
+        options.inSampleSize = calInSampleSize(options, 100, 100);
+
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeStream(diskCache.getStream(cacheFileName), null, options);
     }
 
     //从is中获取指定大小的bitmap
@@ -87,7 +97,6 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
         options.inJustDecodeBounds = false;
 
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length, options);
-
     }
 
     //计算合适的缩小倍数
@@ -120,7 +129,9 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
         if (bitmap != null && imageViewWeakReference != null) {
 
+            //存入内存缓存
             imageLruCache.put(sUrl, bitmap);
+
             ImageView imageView = imageViewWeakReference.get();
             if (imageView != null) {
                 imageView.setImageBitmap(bitmap);
@@ -128,6 +139,7 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
         }
     }
 
+    //将图片下载下来并且保存到磁盘缓存
     public Bitmap downloadBitmap(String sUrl) {
 
         Bitmap bitmap = null;
@@ -147,17 +159,17 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
             int length;
-            byte bytes[] = new byte[1024];
+            byte[] bytes = new byte[1024];
             while((length = bos.read(bytes)) != -1) {
                 baos.write(bytes, 0, length);
             }
 
-            byte[] bytes1 = baos.toByteArray();
+            byte[] byteArray = baos.toByteArray();
 
             String cacheFileName = MD5.hashKeyForDisk(sUrl);
-            diskCache.save(cacheFileName, bytes1);
+            diskCache.save(cacheFileName, byteArray);
 
-            bitmap = decodeSampleFromBytes(bytes1);
+            bitmap = decodeSampleFromBytes(byteArray);
 
         } catch (Exception e) {
 

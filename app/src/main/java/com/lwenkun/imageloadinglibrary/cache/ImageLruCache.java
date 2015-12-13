@@ -22,6 +22,7 @@ public class ImageLruCache{
     public static ImageLruCache getInstance() {
 
         if(imageLruCache == null) {
+
             imageLruCache = new ImageLruCache();
         }
 

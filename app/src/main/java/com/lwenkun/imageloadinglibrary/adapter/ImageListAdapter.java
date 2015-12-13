@@ -20,6 +20,7 @@ public class ImageListAdapter extends RecyclerView.Adapter<ImageListAdapter.View
 
     private final Context context;
 
+    //负责给imageView设置图片
     private BitmapWorker bitmapWorker;
 
     //自定义构造方法将图片传入

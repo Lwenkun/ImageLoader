@@ -45,8 +45,8 @@ public class BitmapWorker {
             AsyncDrawable asyncDrawable = new AsyncDrawable(res, defaultBitmap, task);
             //显示占位图
             imageView.setImageDrawable(asyncDrawable);
-            task.execute(imageUrl);
-        }
+        task.execute(imageUrl);
+    }
     }
 
     public boolean cancelBitmapTask(String key, ImageView imageView) {
