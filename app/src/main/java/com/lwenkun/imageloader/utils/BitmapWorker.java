@@ -33,20 +33,24 @@ public class BitmapWorker {
 
     public void loadImage(String imageUrl, ImageView imageView) {
 
-        Bitmap bitmap = imageLruCache.get(imageUrl);
+        Bitmap bitmap = null;
+
+        if (cancelBitmapTask(imageUrl, imageView)) {
+            bitmap = imageLruCache.get(imageUrl);
+        }
 
         if (bitmap != null) {
 
             imageView.setImageBitmap(bitmap);
 
-        } else if(cancelBitmapTask(imageUrl, imageView)) {
+        } else {
 
-            BitmapWorkerTask task = new BitmapWorkerTask(this, context, imageView);
+            BitmapWorkerTask task = new BitmapWorkerTask(context, imageView);
             AsyncDrawable asyncDrawable = new AsyncDrawable(res, defaultBitmap, task);
             //显示占位图
             imageView.setImageDrawable(asyncDrawable);
-        task.execute(imageUrl);
-    }
+            task.execute(imageUrl);
+        }
     }
 
     public boolean cancelBitmapTask(String key, ImageView imageView) {
@@ -54,7 +58,7 @@ public class BitmapWorker {
         final BitmapWorkerTask bitmapWorkerTask = getBitmapWorkTask(imageView);
 
         //如果task不为空
-        if(bitmapWorkerTask != null) {
+        if (bitmapWorkerTask != null) {
 
             String imageUrl = bitmapWorkerTask.getUrl();
             // 该Task绑定的url与当前相同，即该ImageView绑定的的task是当前请求的task，不取消
@@ -74,13 +78,13 @@ public class BitmapWorker {
 
     public BitmapWorkerTask getBitmapWorkTask(ImageView imageView) {
 
-        if(imageView != null) {
+        if (imageView != null) {
 
             //获取Imageview的drawable对象
             BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
 
             //如果该drawable是AsyncDrawable的一个实例，则ImageView显示的还是占位图且正在获取图片中
-            if(drawable instanceof AsyncDrawable) {
+            if (drawable instanceof AsyncDrawable) {
 
                 return ((AsyncDrawable) drawable).getBitmapWorkerTask();
             }

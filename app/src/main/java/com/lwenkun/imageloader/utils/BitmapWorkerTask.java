@@ -23,8 +23,6 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
     private WeakReference<ImageView> imageViewWeakReference;
 
-    private BitmapWorker bitmapWorker;
-
     private DiskCache diskCache;
 
     private ImageLruCache imageLruCache;
@@ -34,12 +32,11 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
     private String sUrl;
 
 
-    public BitmapWorkerTask(BitmapWorker bitmapWorker, Context context, ImageView imageView) {
+    public BitmapWorkerTask(Context context, ImageView imageView) {
 
         this.imageViewWeakReference = new WeakReference<>(imageView);
         this.diskCache = DiskCache.getInstance(context, CACHE_DIR_NAME);
         this.imageLruCache = ImageLruCache.getInstance();
-        this.bitmapWorker = bitmapWorker;
     }
 
 
@@ -131,13 +128,11 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
         }
 
         if (bitmap != null && imageViewWeakReference != null) {
-
+            
             //存入内存缓存
             imageLruCache.put(sUrl, bitmap);
-
             ImageView imageView = imageViewWeakReference.get();
-            BitmapWorkerTask bitmapWorkerTask = bitmapWorker.getBitmapWorkTask(imageView);
-            if (imageView != null && bitmapWorkerTask == this) {
+            if (imageView != null) {
                 imageView.setImageBitmap(bitmap);
             }
         }
