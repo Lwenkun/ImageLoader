@@ -1,2 +1,2 @@
-# ImageLoadingLibrary
-This is a android library used to load images from web
+# ImageLoader
+This is a demo used to load images from web
