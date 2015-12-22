@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.ui.activities;
+package com.lwenkun.imageloader.ui.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.lwenkun.imageloadinglibrary.R;
-import com.lwenkun.imageloadinglibrary.adapter.ImageListAdapter;
+import com.lwenkun.imageloader.adapter.ImageListAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

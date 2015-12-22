@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.utils;
+package com.lwenkun.imageloader.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -6,8 +6,8 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
-import com.lwenkun.imageloadinglibrary.cache.DiskCache;
-import com.lwenkun.imageloadinglibrary.cache.ImageLruCache;
+import com.lwenkun.imageloader.cache.DiskCache;
+import com.lwenkun.imageloader.cache.ImageLruCache;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -23,6 +23,8 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
 
     private WeakReference<ImageView> imageViewWeakReference;
 
+    private BitmapWorker bitmapWorker;
+
     private DiskCache diskCache;
 
     private ImageLruCache imageLruCache;
@@ -32,11 +34,12 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
     private String sUrl;
 
 
-    public BitmapWorkerTask(Context context, ImageView imageView) {
+    public BitmapWorkerTask(BitmapWorker bitmapWorker, Context context, ImageView imageView) {
 
-        imageViewWeakReference = new WeakReference<>(imageView);
-        diskCache = DiskCache.getInstance(context, CACHE_DIR_NAME);
-        imageLruCache = ImageLruCache.getInstance();
+        this.imageViewWeakReference = new WeakReference<>(imageView);
+        this.diskCache = DiskCache.getInstance(context, CACHE_DIR_NAME);
+        this.imageLruCache = ImageLruCache.getInstance();
+        this.bitmapWorker = bitmapWorker;
     }
 
 
@@ -133,7 +136,8 @@ public class BitmapWorkerTask extends AsyncTask<String, Void, Bitmap> {
             imageLruCache.put(sUrl, bitmap);
 
             ImageView imageView = imageViewWeakReference.get();
-            if (imageView != null) {
+            BitmapWorkerTask bitmapWorkerTask = bitmapWorker.getBitmapWorkTask(imageView);
+            if (imageView != null && bitmapWorkerTask == this) {
                 imageView.setImageBitmap(bitmap);
             }
         }

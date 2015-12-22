@@ -11,13 +11,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e957b6f-fb44-4335-a27c-b04616002b5f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/adapter/ImageListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/adapter/ImageListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/provider/Images.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/provider/Images.java" />
+      <change type="DELETED" beforePath="F:\AndroidStudio\ImageLoader\Imageloadinglibrary.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_1_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_23_1_0.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_1_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\adapter\ImageListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/adapter/ImageListAdapter.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\cache\DiskCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/cache/DiskCache.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\cache\ImageLruCache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/cache/ImageLruCache.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\provider\Images.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/provider/Images.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\ui\AsyncDrawable.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/ui/AsyncDrawable.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\ui\activities\MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/ui/activities/MainActivity.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\utils\BitmapWorker.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/BitmapWorker.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\utils\BitmapWorkerTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/BitmapWorkerTask.java" />
+      <change type="MOVED" beforePath="F:\AndroidStudio\ImageLoader\app\src\main\java\com\lwenkun\imageloadinglibrary\utils\MD5.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/MD5.java" />
     </list>
     <ignored path="ImageLoadingLibrary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,160 +59,155 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="BitmapWorkerTask.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/BitmapWorkerTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="139" column="61" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#5212#5213#0" expanded="false" />
+                <element signature="e#5239#5240#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/widget/ImageView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
+              <caret line="473" column="43" selection-start-line="473" selection-start-column="43" selection-end-line="473" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#50970#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#4625#4626#0" expanded="false" />
+                <element signature="e#4664#4665#0" expanded="false" />
+                <element signature="e#9782#9783#0" expanded="false" />
+                <element signature="e#9822#9823#0" expanded="false" />
+                <element signature="e#11108#11109#0" expanded="false" />
+                <element signature="e#11140#11141#0" expanded="false" />
+                <element signature="e#12166#12167#0" expanded="false" />
+                <element signature="e#12202#12203#0" expanded="false" />
+                <element signature="e#12447#12448#0" expanded="false" />
+                <element signature="e#12480#12481#0" expanded="false" />
+                <element signature="e#13513#13514#0" expanded="false" />
+                <element signature="e#13551#13552#0" expanded="false" />
+                <element signature="e#18536#18537#0" expanded="false" />
+                <element signature="e#18576#18577#0" expanded="false" />
+                <element signature="e#19502#19503#0" expanded="false" />
+                <element signature="e#19542#19543#0" expanded="false" />
+                <element signature="e#20340#20341#0" expanded="false" />
+                <element signature="e#20382#20383#0" expanded="false" />
+                <element signature="e#20448#20449#0" expanded="false" />
+                <element signature="e#20495#20496#0" expanded="false" />
+                <element signature="e#24220#24221#0" expanded="false" />
+                <element signature="e#24258#24259#0" expanded="false" />
+                <element signature="e#25129#25130#0" expanded="false" />
+                <element signature="e#25162#25163#0" expanded="false" />
+                <element signature="e#26731#26732#0" expanded="false" />
+                <element signature="e#26768#26769#0" expanded="false" />
+                <element signature="e#45293#45294#0" expanded="false" />
+                <element signature="e#45336#45337#0" expanded="false" />
+                <element signature="e#46050#46051#0" expanded="false" />
+                <element signature="e#46113#46114#0" expanded="false" />
+                <element signature="e#46157#46158#0" expanded="false" />
+                <element signature="e#46193#46194#0" expanded="false" />
+                <element signature="e#46721#46722#0" expanded="false" />
+                <element signature="e#46756#46757#0" expanded="false" />
+                <element signature="e#47433#47434#0" expanded="false" />
+                <element signature="e#47462#47463#0" expanded="false" />
+                <element signature="e#47727#47728#0" expanded="false" />
+                <element signature="e#47758#47759#0" expanded="false" />
+                <element signature="e#50702#50703#0" expanded="false" />
+                <element signature="e#50750#50751#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.366667">
+              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/lwenkun/imageloadinglibrary/BuildConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.60714287">
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="R.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/lwenkun/imageloadinglibrary/R.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6732673">
-              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+            <state vertical-scroll-proportion="-1.2142857">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <folding>
+                <element signature="e#583#601#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.05414013">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="AsyncDrawable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/AsyncDrawable.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/ui/AsyncDrawable.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Images.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/provider/Images.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="106" column="127" selection-start-line="106" selection-start-column="127" selection-end-line="106" selection-end-column="127" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageListAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/adapter/ImageListAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
               <folding>
-                <element signature="e#2185#2186#0" expanded="true" />
-                <element signature="e#2231#2232#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DiskCache.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/activities/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageLruCache.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinearLayout.java" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/widget/LinearLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1742" column="60" selection-start-line="1742" selection-start-column="60" selection-end-line="1742" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#78991#0" expanded="false" />
                 <element signature="imports" expanded="false" />
-                <element signature="e#7400#7401#0" expanded="false" />
-                <element signature="e#7435#7436#0" expanded="false" />
-                <element signature="e#7509#7510#0" expanded="false" />
-                <element signature="e#7548#7549#0" expanded="false" />
-                <element signature="e#9723#9724#0" expanded="false" />
-                <element signature="e#9751#9752#0" expanded="false" />
-                <element signature="e#9934#9935#0" expanded="false" />
-                <element signature="e#9970#9971#0" expanded="false" />
-                <element signature="e#10208#10209#0" expanded="false" />
-                <element signature="e#10239#10240#0" expanded="false" />
-                <element signature="e#11269#11270#0" expanded="false" />
-                <element signature="e#11310#11311#0" expanded="false" />
-                <element signature="e#11544#11545#0" expanded="false" />
-                <element signature="e#11582#11583#0" expanded="false" />
-                <element signature="e#11738#11739#0" expanded="false" />
-                <element signature="e#11774#11775#0" expanded="false" />
-                <element signature="e#15928#15929#0" expanded="false" />
-                <element signature="e#15967#15968#0" expanded="false" />
-                <element signature="e#16365#16366#0" expanded="false" />
-                <element signature="e#16415#16416#0" expanded="false" />
-                <element signature="e#16878#16879#0" expanded="false" />
-                <element signature="e#16917#16918#0" expanded="false" />
-                <element signature="e#17480#17481#0" expanded="false" />
-                <element signature="e#17522#17523#0" expanded="false" />
-                <element signature="e#19885#19886#0" expanded="false" />
-                <element signature="e#19934#19935#0" expanded="false" />
-                <element signature="e#20906#20907#0" expanded="false" />
-                <element signature="e#20946#20947#0" expanded="false" />
-                <element signature="e#21334#21335#0" expanded="false" />
-                <element signature="e#21372#21373#0" expanded="false" />
-                <element signature="e#21646#21647#0" expanded="false" />
-                <element signature="e#21679#21680#0" expanded="false" />
-                <element signature="e#22313#22314#0" expanded="false" />
-                <element signature="e#22367#22368#0" expanded="false" />
-                <element signature="e#58080#58081#0" expanded="false" />
-                <element signature="e#58104#58105#0" expanded="false" />
-                <element signature="e#58398#58399#0" expanded="false" />
-                <element signature="e#58422#58423#0" expanded="false" />
-                <element signature="e#59779#59780#0" expanded="false" />
-                <element signature="e#59803#59804#0" expanded="false" />
-                <element signature="e#60190#60191#0" expanded="false" />
-                <element signature="e#60214#60215#0" expanded="false" />
-                <element signature="e#70399#70400#0" expanded="false" />
-                <element signature="e#70434#70435#0" expanded="false" />
-                <element signature="e#73502#73503#0" expanded="false" />
-                <element signature="e#73553#73554#0" expanded="false" />
-                <element signature="e#77871#77872#0" expanded="false" />
-                <element signature="e#77903#77904#0" expanded="false" />
-                <element signature="e#78020#78021#0" expanded="false" />
-                <element signature="e#78057#78058#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BitmapWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -223,7 +231,7 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="ImageLoadingLibrary" />
+              <option name="name" value="ImageLoader" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
@@ -234,7 +242,7 @@
                 <option name="path" value="$PROJECT_DIR$/app" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
-                <option name="name" value="ImageLoadingLibrary" />
+                <option name="name" value="ImageLoader" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
             </list>
@@ -252,17 +260,17 @@
                 <option name="name" value="clean" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'ImageLoadingLibrary'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'ImageLoader'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'ImageLoadingLibrary'." />
+                <option name="description" value="Displays all dependencies declared in root project 'ImageLoader'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'ImageLoadingLibrary'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'ImageLoader'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -277,22 +285,22 @@
                 <option name="name" value="init" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'ImageLoadingLibrary'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'ImageLoader'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'ImageLoadingLibrary'." />
+                <option name="description" value="Displays the sub-projects of root project 'ImageLoader'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'ImageLoadingLibrary'." />
+                <option name="description" value="Displays the properties of root project 'ImageLoader'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'ImageLoadingLibrary' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'ImageLoader' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -1348,6 +1356,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\15119\Desktop\ImageLoadingLibrary" value="4345515199965" />
+        <entry key="F:\AndroidStudio\ImageLoader" value="4352375925067" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1676,10 +1685,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/adapter/ImageListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/provider/Images.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java" />
+        <option value="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/lwenkun/imageloadinglibrary/test/BuildConfig.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/lwenkun/imageloadinglibrary/BuildConfig.java" />
+        <option value="$PROJECT_DIR$/app/build/generated/source/r/debug/com/lwenkun/imageloadinglibrary/R.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
@@ -1725,6 +1739,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1761,24 +1776,6 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImageLoadingLibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
@@ -1797,100 +1794,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="imageloadinglibrary" />
+              <option name="myItemId" value="imageloader" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImageLoadingLibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imageloadinglibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImageLoadingLibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imageloadinglibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="provider" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImageLoadingLibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imageloadinglibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cache" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ImageLoadingLibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imageloadinglibrary" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="adapter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1905,10 +1810,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2078,7 +1982,7 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -2125,7 +2029,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2136,7 +2040,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20989761" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3668942" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2146,6 +2050,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20196672" sideWeight="0.4814815" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -2158,7 +2063,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="142" y="130" width="1170" height="535" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2190,48 +2094,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/MD5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82405746">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/placehold.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2247,13 +2109,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/os/ServiceManager.java">
@@ -2281,13 +2143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.291228">
           <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38636363">
-          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -2398,7 +2253,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/MD5.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/MD5.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
@@ -2462,133 +2317,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/view/ViewGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5446" column="13" selection-start-line="5446" selection-start-column="13" selection-end-line="5446" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#295920#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#20129#20130#0" expanded="false" />
-            <element signature="e#20164#20165#0" expanded="false" />
-            <element signature="e#20224#20225#0" expanded="false" />
-            <element signature="e#20259#20260#0" expanded="false" />
-            <element signature="e#20322#20323#0" expanded="false" />
-            <element signature="e#20357#20358#0" expanded="false" />
-            <element signature="e#20414#20415#0" expanded="false" />
-            <element signature="e#20449#20450#0" expanded="false" />
-            <element signature="e#20516#20517#0" expanded="false" />
-            <element signature="e#20551#20552#0" expanded="false" />
-            <element signature="e#20599#20600#0" expanded="false" />
-            <element signature="e#20634#20635#0" expanded="false" />
-            <element signature="e#20695#20696#0" expanded="false" />
-            <element signature="e#20734#20735#0" expanded="false" />
-            <element signature="e#25715#25716#0" expanded="false" />
-            <element signature="e#25774#25775#0" expanded="false" />
-            <element signature="e#36762#36763#0" expanded="false" />
-            <element signature="e#36793#36794#0" expanded="false" />
-            <element signature="e#37254#37255#0" expanded="false" />
-            <element signature="e#37333#37334#0" expanded="false" />
-            <element signature="e#70345#70346#0" expanded="false" />
-            <element signature="e#70393#70394#0" expanded="false" />
-            <element signature="e#73445#73446#0" expanded="false" />
-            <element signature="e#73473#73474#0" expanded="false" />
-            <element signature="e#104616#104617#0" expanded="false" />
-            <element signature="e#104644#104645#0" expanded="false" />
-            <element signature="e#116312#116313#0" expanded="false" />
-            <element signature="e#116360#116361#0" expanded="false" />
-            <element signature="e#123516#123517#0" expanded="false" />
-            <element signature="e#123580#123581#0" expanded="false" />
-            <element signature="e#124790#124791#0" expanded="false" />
-            <element signature="e#124830#124831#0" expanded="false" />
-            <element signature="e#133675#133803#0" expanded="false" />
-            <element signature="e#133802#133803#0" expanded="false" />
-            <element signature="e#135504#135505#0" expanded="false" />
-            <element signature="e#135528#135529#0" expanded="false" />
-            <element signature="e#137366#137544#0" expanded="false" />
-            <element signature="e#137543#137544#0" expanded="false" />
-            <element signature="e#140770#140771#0" expanded="false" />
-            <element signature="e#140834#140835#0" expanded="false" />
-            <element signature="e#143224#143225#0" expanded="false" />
-            <element signature="e#143283#143284#0" expanded="false" />
-            <element signature="e#147812#147813#0" expanded="false" />
-            <element signature="e#147840#147841#0" expanded="false" />
-            <element signature="e#156324#156325#0" expanded="false" />
-            <element signature="e#156358#156359#0" expanded="false" />
-            <element signature="e#158600#158601#0" expanded="false" />
-            <element signature="e#158642#158643#0" expanded="false" />
-            <element signature="e#160313#160314#0" expanded="false" />
-            <element signature="e#160346#160347#0" expanded="false" />
-            <element signature="e#172868#172869#0" expanded="false" />
-            <element signature="e#172908#172909#0" expanded="false" />
-            <element signature="e#173501#173502#0" expanded="false" />
-            <element signature="e#173550#173551#0" expanded="false" />
-            <element signature="e#178444#178445#0" expanded="false" />
-            <element signature="e#178478#178479#0" expanded="false" />
-            <element signature="e#187367#187368#0" expanded="false" />
-            <element signature="e#187419#187420#0" expanded="false" />
-            <element signature="e#188306#188307#0" expanded="false" />
-            <element signature="e#188344#188345#0" expanded="false" />
-            <element signature="e#189319#189320#0" expanded="false" />
-            <element signature="e#189364#189365#0" expanded="false" />
-            <element signature="e#208596#208597#0" expanded="false" />
-            <element signature="e#208653#208654#0" expanded="false" />
-            <element signature="e#209270#209271#0" expanded="false" />
-            <element signature="e#209319#209320#0" expanded="false" />
-            <element signature="e#209966#209967#0" expanded="false" />
-            <element signature="e#210015#210016#0" expanded="false" />
-            <element signature="e#216694#216695#0" expanded="false" />
-            <element signature="e#216745#216746#0" expanded="false" />
-            <element signature="e#217787#217788#0" expanded="false" />
-            <element signature="e#217833#217834#0" expanded="false" />
-            <element signature="e#222391#222392#0" expanded="false" />
-            <element signature="e#222415#222416#0" expanded="false" />
-            <element signature="e#224457#224458#0" expanded="false" />
-            <element signature="e#224494#224495#0" expanded="false" />
-            <element signature="e#239608#239609#0" expanded="false" />
-            <element signature="e#239646#239647#0" expanded="false" />
-            <element signature="e#241742#241743#0" expanded="false" />
-            <element signature="e#241783#241784#0" expanded="false" />
-            <element signature="e#251780#251781#0" expanded="false" />
-            <element signature="e#251807#251808#0" expanded="false" />
-            <element signature="e#253190#253191#0" expanded="false" />
-            <element signature="e#253218#253219#0" expanded="false" />
-            <element signature="e#253718#253719#0" expanded="false" />
-            <element signature="e#253758#253759#0" expanded="false" />
-            <element signature="e#279427#279428#0" expanded="false" />
-            <element signature="e#279496#279497#0" expanded="false" />
-            <element signature="e#287329#287356#0" expanded="false" />
-            <element signature="e#287437#287443#0" expanded="false" />
-            <element signature="e#287524#287544#0" expanded="false" />
-            <element signature="e#288007#288008#0" expanded="false" />
-            <element signature="e#288054#288055#0" expanded="false" />
-            <element signature="e#288099#288100#0" expanded="false" />
-            <element signature="e#288150#288151#0" expanded="false" />
-            <element signature="e#288198#288199#0" expanded="false" />
-            <element signature="e#288253#288254#0" expanded="false" />
-            <element signature="e#290147#290148#0" expanded="false" />
-            <element signature="e#290188#290189#0" expanded="false" />
-            <element signature="e#290700#290720#0" expanded="false" />
-            <element signature="e#291438#291439#0" expanded="false" />
-            <element signature="e#291492#291493#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16629" column="21" selection-start-line="16629" selection-start-column="14" selection-end-line="16629" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2653,31 +2394,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/activities/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/ui/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/ui/AsyncDrawable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/ImageLruCache.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/cache/ImageLruCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
@@ -2685,7 +2412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/provider/Images.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/provider/Images.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="106" column="127" selection-start-line="106" selection-start-column="127" selection-end-line="106" selection-end-column="127" />
@@ -2693,40 +2420,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/adapter/ImageListAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/cache/DiskCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding>
-            <element signature="e#2185#2186#0" expanded="true" />
-            <element signature="e#2231#2232#0" expanded="true" />
+            <marker date="1450795578528" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/cache/DiskCache.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/BitmapWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-          <folding />
+          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloadinglibrary/utils/BitmapWorkerTask.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/adapter/ImageListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-          <folding />
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1450#1451#0" expanded="false" />
+            <element signature="e#1490#1491#0" expanded="false" />
+            <element signature="e#2161#2162#0" expanded="false" />
+            <element signature="e#2207#2208#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33206832">
+          <caret line="15290" column="49" selection-start-line="15290" selection-start-column="49" selection-end-line="15290" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/ui/AsyncDrawable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lwenkun/imageloader/utils/BitmapWorkerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="139" column="61" selection-start-line="139" selection-start-column="61" selection-end-line="139" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#5212#5213#0" expanded="false" />
+            <element signature="e#5239#5240#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/android-sdk-windows/sources/android-23/android/widget/ImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="473" column="43" selection-start-line="473" selection-start-column="43" selection-end-line="473" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#50970#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4625#4626#0" expanded="false" />
+            <element signature="e#4664#4665#0" expanded="false" />
+            <element signature="e#9782#9783#0" expanded="false" />
+            <element signature="e#9822#9823#0" expanded="false" />
+            <element signature="e#11108#11109#0" expanded="false" />
+            <element signature="e#11140#11141#0" expanded="false" />
+            <element signature="e#12166#12167#0" expanded="false" />
+            <element signature="e#12202#12203#0" expanded="false" />
+            <element signature="e#12447#12448#0" expanded="false" />
+            <element signature="e#12480#12481#0" expanded="false" />
+            <element signature="e#13513#13514#0" expanded="false" />
+            <element signature="e#13551#13552#0" expanded="false" />
+            <element signature="e#18536#18537#0" expanded="false" />
+            <element signature="e#18576#18577#0" expanded="false" />
+            <element signature="e#19502#19503#0" expanded="false" />
+            <element signature="e#19542#19543#0" expanded="false" />
+            <element signature="e#20340#20341#0" expanded="false" />
+            <element signature="e#20382#20383#0" expanded="false" />
+            <element signature="e#20448#20449#0" expanded="false" />
+            <element signature="e#20495#20496#0" expanded="false" />
+            <element signature="e#24220#24221#0" expanded="false" />
+            <element signature="e#24258#24259#0" expanded="false" />
+            <element signature="e#25129#25130#0" expanded="false" />
+            <element signature="e#25162#25163#0" expanded="false" />
+            <element signature="e#26731#26732#0" expanded="false" />
+            <element signature="e#26768#26769#0" expanded="false" />
+            <element signature="e#45293#45294#0" expanded="false" />
+            <element signature="e#45336#45337#0" expanded="false" />
+            <element signature="e#46050#46051#0" expanded="false" />
+            <element signature="e#46113#46114#0" expanded="false" />
+            <element signature="e#46157#46158#0" expanded="false" />
+            <element signature="e#46193#46194#0" expanded="false" />
+            <element signature="e#46721#46722#0" expanded="false" />
+            <element signature="e#46756#46757#0" expanded="false" />
+            <element signature="e#47433#47434#0" expanded="false" />
+            <element signature="e#47462#47463#0" expanded="false" />
+            <element signature="e#47727#47728#0" expanded="false" />
+            <element signature="e#47758#47759#0" expanded="false" />
+            <element signature="e#50702#50703#0" expanded="false" />
+            <element signature="e#50750#50751#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.366667">
+          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/lwenkun/imageloadinglibrary/BuildConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6732673">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        <state vertical-scroll-proportion="-0.60714287">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/lwenkun/imageloadinglibrary/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2142857">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="e#583#601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05414013">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
           <folding />
         </state>
       </provider>

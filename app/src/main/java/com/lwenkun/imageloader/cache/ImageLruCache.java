@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.cache;
+package com.lwenkun.imageloader.cache;
 
 
 import android.graphics.Bitmap;

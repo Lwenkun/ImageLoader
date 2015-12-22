@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.adapter;
+package com.lwenkun.imageloader.adapter;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.lwenkun.imageloader.provider.Images;
+import com.lwenkun.imageloader.utils.BitmapWorker;
 import com.lwenkun.imageloadinglibrary.R;
-import com.lwenkun.imageloadinglibrary.provider.Images;
-import com.lwenkun.imageloadinglibrary.utils.BitmapWorker;
 
 /**
  * Created by 15119 on 2015/11/9.

@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.utils;
+package com.lwenkun.imageloader.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -7,9 +7,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.widget.ImageView;
 
+import com.lwenkun.imageloader.ui.AsyncDrawable;
 import com.lwenkun.imageloadinglibrary.R;
-import com.lwenkun.imageloadinglibrary.cache.ImageLruCache;
-import com.lwenkun.imageloadinglibrary.ui.AsyncDrawable;
+import com.lwenkun.imageloader.cache.ImageLruCache;
 
 /**
  * Created by 15119 on 2015/11/9.
@@ -41,7 +41,7 @@ public class BitmapWorker {
 
         } else if(cancelBitmapTask(imageUrl, imageView)) {
 
-            BitmapWorkerTask task = new BitmapWorkerTask(context, imageView);
+            BitmapWorkerTask task = new BitmapWorkerTask(this, context, imageView);
             AsyncDrawable asyncDrawable = new AsyncDrawable(res, defaultBitmap, task);
             //显示占位图
             imageView.setImageDrawable(asyncDrawable);

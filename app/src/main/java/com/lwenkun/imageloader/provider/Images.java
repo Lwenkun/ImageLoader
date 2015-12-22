@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.provider;
+package com.lwenkun.imageloader.provider;
 
 /**
  * Created by 15119 on 2015/11/9.

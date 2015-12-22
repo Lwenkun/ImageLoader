@@ -1,4 +1,4 @@
-package com.lwenkun.imageloadinglibrary.utils;
+package com.lwenkun.imageloader.utils;
 
 import java.security.MessageDigest;
 
